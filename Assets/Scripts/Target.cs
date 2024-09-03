@@ -10,11 +10,11 @@ public class Target : MonoBehaviour
 
     private GameManager gameManager;
     private Rigidbody targetRb;
-    private float minSpeed = 12;
-    private float maxSpeed = 16;
+    private float minSpeed = 10;
+    private float maxSpeed = 14;
     private float maxTorque = 10;
     private float xRange = 4;
-    private float ySpawnPos = -5;
+    private float ySpawnPos = -2;
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +29,21 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
+        if (gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        gameManager.UpdateScore(-5);
+        if (gameObject.CompareTag("Bad") == false)
+        {
+            gameManager.GameOver();
+        }
     }
 
     Vector3 RandomForce()
