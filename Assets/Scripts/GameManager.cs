@@ -4,9 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject titleScreen;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
@@ -19,10 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
-        UpdateScore(score);
 
-        StartCoroutine(SpawnTargets());
     }
 
     IEnumerator SpawnTargets()
@@ -50,5 +49,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void StartGame(int difficulty)
+    {
+        titleScreen.SetActive(false);
+        isGameActive = true;
+        spawnRate /= difficulty;
 
+        score = 0;
+        UpdateScore(score);
+        StartCoroutine(SpawnTargets());
+    }
 }
