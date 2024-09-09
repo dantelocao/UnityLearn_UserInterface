@@ -18,8 +18,13 @@ Este projeto faz parte da Unit 5 do curso "User Interface" na plataforma Unity L
 1. Inicie o jogo a partir da tela de título.
 2. Objetos aleatórios aparecerão na tela. Clique neles para destruí-los e ganhar pontos.
 3. Acompanhe sua pontuação no canto superior da tela.
-4. Quando o timer finalizar o jogo será encerrado ou quando o jogador errar o objeto a ser destruido.
+4. Quando o jogador deixar passar uma caixa que deveria clickar o jogo é encerrado.
 5. Clique em "Reiniciar" para jogar novamente ou altere a dificuldade na tela de título.
 
 ## Fotos
 
+![1](https://github.com/user-attachments/assets/8fdf7a64-7942-4c12-8c6c-00adf4f7bfa7)
+
+![2](https://github.com/user-attachments/assets/2147a3ef-6eaf-4ec1-aea6-32029352c1a4)
+
+![3](https://github.com/user-attachments/assets/a3c8c2d0-b5c2-4af9-b0d5-56e3a50494ba)
